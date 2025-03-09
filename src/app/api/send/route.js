@@ -1,28 +1,44 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: process.env.MAILTRAP_USER,
+    pass: process.env.MAILTRAP_PASS,
+  },
+});
+
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req, res) {
   const { email, subject, message } = await req.json();
   console.log(email, subject, message);
+
+  const mailOptions = {
+    from: fromEmail,
+    to: [fromEmail, email],
+    subject: subject,
+    html: `
+      <h1>${subject}</h1>
+      <p>Thank you for contacting us!</p>
+      <p>New message submitted:</p>
+      <p>${message}</p>
+    `,
+  };
+
   try {
-    const data = await resend.emails.send({
-      from: fromEmail,
-      to: [fromEmail, email],
-      subject: subject,
-      react: (
-        <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
-          <p>{message}</p>
-        </>
-      ),
+    const info = await transporter.sendMail(mailOptions);
+    return NextResponse.json({
+      success: true,
+      messageId: info.messageId,
     });
-    return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error });
+    console.error("Error sending email:", error);
+    return NextResponse.json({
+      success: false,
+      error: error.message,
+    });
   }
 }

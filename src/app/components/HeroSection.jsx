@@ -7,6 +7,14 @@ import Link from "next/link";
 import { assets } from "../assets/assets";
 
 const HeroSection = () => {
+  const handleDownload = (e) => {
+    e.preventDefault();  // Prevent default Link navigation behavior
+    const link = document.createElement('a');
+    link.href = '/hamza-resume.pdf';  // Path to the PDF file
+    link.download = 'Hamza_Resume.pdf';  // Name of the file when downloaded
+    link.click();  // Programmatically trigger the download
+  };
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -48,7 +56,8 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+              href="/hamza-resume.pdf"
+              onClick={handleDownload}
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
