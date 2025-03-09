@@ -6,7 +6,7 @@ Welcome to my personal portfolio website built with **Next.js**. Here, you'll fi
 
 - **Responsive Design**: Mobile-first, works across all devices.
 - **Project Showcase**: Displays my personal and professional projects.
-- **Theme Switcher**: Dark/Light mode toggle for better UI personalization.
+- **Contact Info**: Contact Details to reach me out for any help.
 
 ## Tech Stack
 
@@ -14,9 +14,3 @@ Welcome to my personal portfolio website built with **Next.js**. Here, you'll fi
 - **React**
 - **Tailwind CSS**
 
-## Setup
-
-Clone this repo:
-
-```bash
-git clone https://github.com/yourusername/portfolio-website.git
