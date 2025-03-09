@@ -9,12 +9,14 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>PHP & Laravel</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>Node.js & Nest</li>
+        <li>React & Next</li>
+        <li>Vue Js, Nuxt</li>
+        <li>PostgreSQL, MySql</li>
+        <li>Mongo DB</li>
+        <li>AWS, GCP</li>
       </ul>
     ),
   },
@@ -23,8 +25,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>BS in Information Technology</li>
+        <li>Bahauddin Zikriya University Multan</li>
       </ul>
     ),
   },
@@ -33,8 +35,10 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Certification in Web Development</li>
+        <li>CBT in Web Designing & Development</li>
+        <li>Front-end Development (jQuery, Ajax, DOM)</li>
+        <li>Complete MERN stack (Express JS, Node, JEST)</li>
       </ul>
     ),
   },
@@ -59,7 +63,7 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
+            working with PHP, Laravel JavaScript, React, Redux, Node.js, Express, PostgreSQL,
             Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
